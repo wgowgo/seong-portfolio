@@ -50,7 +50,7 @@ export function ProjectBoard() {
 
   if (!repos) {
     return (
-      <div className="pin-board" aria-busy="true" aria-label="저장소 불러오는 중">
+      <div className="pin-board" aria-busy="true" aria-label="Loading repositories">
         <span className="pin-year" aria-hidden="true">
           {new Date().getFullYear()}
         </span>
@@ -64,7 +64,7 @@ export function ProjectBoard() {
   return (
     <>
       {failed ? (
-        <p className="pin-note">GitHub를 못 불러서 저장된 목록을 보여요.</p>
+        <p className="pin-note">Could not reach GitHub, so this is the saved list.</p>
       ) : null}
       <div className="pin-board">
         <span className="pin-year" aria-hidden="true">

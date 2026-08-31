@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${sans.variable} ${caveat.variable}`}>
+    <html lang="en" className={`${sans.variable} ${caveat.variable}`}>
       <body>{children}</body>
     </html>
   );

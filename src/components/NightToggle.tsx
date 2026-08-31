@@ -5,7 +5,7 @@ export function NightToggle() {
     <button
       type="button"
       className="night-toggle"
-      aria-label="낮과 밤 바꾸기"
+      aria-label="Toggle day and night"
       onClick={() => {
         const html = document.documentElement;
         const next = html.getAttribute("data-theme") === "night" ? "day" : "night";

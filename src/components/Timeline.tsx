@@ -2,7 +2,7 @@ import { site } from "@/data/site";
 
 export function Timeline() {
   return (
-    <section className="timeline" aria-label="경력">
+    <section className="timeline" aria-label="Experience">
       <h2 className="section-label">Experience</h2>
       <ol className="cv-list">
         {site.timeline.map((item) => (

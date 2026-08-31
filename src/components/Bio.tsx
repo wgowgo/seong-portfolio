@@ -2,7 +2,7 @@ import { site } from "@/data/site";
 
 export function Bio() {
   return (
-    <section className="bio" aria-label="소개">
+    <section className="bio" aria-label="About">
       <h1>{site.name}</h1>
       <p className="bio-role">{site.role}</p>
       <p className="bio-links">

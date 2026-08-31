@@ -63,7 +63,7 @@ export function DeskScene({
           style={h.style}
           onClick={() => onOpen(h.id)}
           aria-haspopup="dialog"
-          aria-label={`${h.label} 열기`}
+          aria-label={`Open ${h.label}`}
         >
           {h.kind === "board" ? null : (
             <span className="hotspot-label" aria-hidden="true">
@@ -82,7 +82,7 @@ function SceneArt() {
       className="scene-svg"
       viewBox="0 0 960 520"
       role="img"
-      aria-label="낙서 책상. 보드, 노트북, 책, 헤드폰을 누를 수 있습니다."
+      aria-label="Hand-drawn desk. Press the board, laptop, books, or headphones."
     >
       <defs>
         <filter id="sketch" x="-5%" y="-5%" width="110%" height="110%">

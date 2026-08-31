@@ -35,7 +35,7 @@ export function OverlayWindow({
 
   return (
     <div role="dialog" aria-modal="true" aria-labelledby={headingId}>
-      <button type="button" className="dim" onClick={onClose} aria-label="닫기" />
+      <button type="button" className="dim" onClick={onClose} aria-label="Close" />
       <div className="chrome">
         <h2 id={headingId}>{title}</h2>
         <button
@@ -43,7 +43,7 @@ export function OverlayWindow({
           type="button"
           className="chrome-close"
           onClick={onClose}
-          aria-label="닫기"
+          aria-label="Close"
         >
           <CloseIcon />
         </button>

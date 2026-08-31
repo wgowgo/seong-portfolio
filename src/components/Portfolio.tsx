@@ -26,14 +26,14 @@ export function Portfolio() {
   return (
     <>
       <a className="skip" href="#bio">
-        본문으로
+        Skip to content
       </a>
       <NightToggle />
       <main>
         <div className="stage">
           <DeskScene onOpen={setOpen} />
         </div>
-        <nav className="mobile-nav" aria-label="바로가기">
+        <nav className="mobile-nav" aria-label="Shortcuts">
           {MOBILE_LINKS.map((l) => (
             <button key={l.id} type="button" onClick={() => setOpen(l.id)}>
               {l.label}
