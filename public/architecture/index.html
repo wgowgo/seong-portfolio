@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlindCollective — Structurizr</title>
+  <style>
+    :root {
+      --bg: #f6f6f6;
+      --ink: #222;
+      --muted: #555;
+      --line: #d8d8d8;
+      --nav: #1e1e1e;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--nav);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    section {
+      margin: 0 0 2.5rem;
+      scroll-margin-top: 3.5rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin: 0 0 0.75rem;
+    }
+
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.25rem; }
+    h3 { font-size: 1.05rem; }
+
+    p, li { color: var(--ink); max-width: 46rem; }
+
+    .frame {
+      width: 100%;
+      height: 80vh;
+      min-height: 640px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    article {
+      border-top: 1px solid var(--line);
+      padding: 1.25rem 0;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../">Desk</a>
+    <a href="https://github.com/wgowgo/blindcollective">GitHub</a>
+    <a href="#system">System Context</a>
+    <a href="#containers">Containers</a>
+    <a href="#deployment">Deployment</a>
+    <a href="#documentation">Documentation</a>
+    <a href="#decisions">Decisions</a>
+  </nav>
+
+  <main>
+    <section id="system">
+      <h1>System Context</h1>
+      <iframe class="frame" title="System Context" src="./viewer.html?diagram=SystemContext&introduction=false&embed=true#SystemContext"></iframe>
+    </section>
+
+    <section id="containers">
+      <h1>Containers</h1>
+      <iframe class="frame" title="Containers" src="./viewer.html?diagram=Containers&introduction=false&embed=true#Containers"></iframe>
+    </section>
+
+    <section id="deployment">
+      <h1>Deployment</h1>
+      <iframe class="frame" title="Deployment" src="./viewer.html?diagram=ProductionDeployment&introduction=false&embed=true#ProductionDeployment"></iframe>
+    </section>
+
+    <section id="documentation">
+      <h1>Documentation</h1>
+
+      <article>
+        <h2>Overview</h2>
+        <p>BlindCollective is a Confidential Procurement Network. It detects unpublished future purchase demand, combines that demand without revealing buyer identity or exact amounts, and runs competitive supplier bidding plus collective negotiation.</p>
+        <p>The blockchain is a verification and state anchor, not a datastore. The durable assets are four layers:</p>
+        <ol>
+          <li>Procurement Intelligence Graph — normalize contracts and spend, infer Future Purchase Intent</li>
+          <li>Confidential Demand Network — combine demand without identity or exact quantity leakage</li>
+          <li>Verifiable Market Protocol — commitments, nullifiers, ZK proofs, commit-reveal bids</li>
+          <li>Procurement Outcome Dataset — accumulate real discount and negotiation outcomes</li>
+        </ol>
+        <h3>Design principles</h3>
+        <ul>
+          <li>Contract text and exact purchase amounts never go on the public chain.</li>
+          <li>Buyer identity and exact quantity stay hidden from other buyers and from suppliers.</li>
+          <li>Operators do not get standing access to raw source data.</li>
+          <li>Demand must be cryptographically verifiable.</li>
+          <li>AI recommends. Legally binding acts pass policy and signatures.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h2>Containers</h2>
+        <h3>Consoles</h3>
+        <p>Buyer, Supplier, and Operator consoles are Next.js apps. All writes go through the API Edge.</p>
+        <h3>API Edge</h3>
+        <p>FAPI 2.0 authentication, tenant resolver, WAF, and idempotency. The external contract is OpenAPI 3.2 REST.</p>
+        <h3>Control Plane</h3>
+        <p>Owns organization, verifiable credentials, OPA policy, connections, and Temporal workflows.</p>
+        <h3>Enterprise Edge Agent</h3>
+        <p>A Rust agent that runs inside the buyer network. Connectors are read-only. Raw contracts stay on-prem whenever possible.</p>
+        <h3>Intelligence Plane</h3>
+        <p>Document and contract AI, vendor resolution, forecast, switchability, and the intent compiler. LLM output is not the source of truth.</p>
+        <h3>Confidential Compute</h3>
+        <p>Matching and aggregation run in a TEE. Range and aggregate proofs use Circom or Noir with Groth16.</p>
+        <h3>Market / Chain / Settlement</h3>
+        <p>Market runs RFQ and commit-reveal bidding. Chain writes commitments to registries only. Settlement records payment status and savings.</p>
+      </article>
+    </section>
+
+    <section id="decisions">
+      <h1>Decisions</h1>
+
+      <article>
+        <h2>1. Record architecture decisions</h2>
+        <p class="status">Accepted · 2026-08-29</p>
+        <h3>Context</h3>
+        <p>This network mixes privacy, regulation, chain state, and AI authority. If decisions live only in a long spec, review and implementation drift.</p>
+        <h3>Decision</h3>
+        <p>Record architecture decisions as ADRs and attach them to the Structurizr workspace.</p>
+        <h3>Consequences</h3>
+        <p>Model, views, documentation, and decisions can be reviewed in one place.</p>
+      </article>
+
+      <article>
+        <h2>2. Blockchain is a verification anchor, not a datastore</h2>
+        <p class="status">Accepted · 2026-08-29</p>
+        <h3>Context</h3>
+        <p>Putting legal names, contract text, or exact amounts on a public L2 would break a confidential procurement network.</p>
+        <h3>Decision</h3>
+        <p>On-chain data is limited to organization, intent, pool, bid, and award commitments, nullifier hashes, settlement digests, and audit timestamps. Source documents and exact amounts stay off-chain.</p>
+        <h3>Consequences</h3>
+        <p>Reads verify commitments. Data sovereignty stays in PostgreSQL with tenant KEKs.</p>
+      </article>
+
+      <article>
+        <h2>3. Confidential matching uses TEE, ZK range proofs, and nullifiers</h2>
+        <p class="status">Accepted · 2026-08-29</p>
+        <h3>Context</h3>
+        <p>Combining demand requires exact amounts, but operators and suppliers must not see those values. The same demand must not be spent twice.</p>
+        <h3>Decision</h3>
+        <p>Exact amounts and organization mappings stay inside a TEE. Public outputs are spend buckets plus Groth16 range and aggregate proofs. Duplicates are blocked with a Poseidon nullifier.</p>
+        <h3>Consequences</h3>
+        <p>The initial proof system is Groth16 on BN254. Verifiers are abstracted so the proving system can change later.</p>
+      </article>
+
+      <article>
+        <h2>4. Separate AI recommendations from legal authority</h2>
+        <p class="status">Accepted · 2026-08-29</p>
+        <h3>Context</h3>
+        <p>Intent detection and negotiation strategy can be automated. Award, signature, and payment create legal obligations.</p>
+        <h3>Decision</h3>
+        <p>AI produces recommendations and drafts only. Intent publication, pool join, award, contract signature, and payment must pass OPA policy and EIP-712 / ERC-4337 signatures.</p>
+        <h3>Consequences</h3>
+        <p>Enterprises may automate some steps by policy. The default is human approval.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
