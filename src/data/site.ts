@@ -1,3 +1,8 @@
+export type Award = {
+  title: string;
+  meta?: string;
+};
+
 export type OverlayId =
   | "projects"
   | "resume"
@@ -273,7 +278,7 @@ export const site = {
     {
       title: "2026 창업 300 최종합격",
     },
-  ],
+  ] satisfies Award[],
   lab: [
     {
       title: "Color Previewer",
