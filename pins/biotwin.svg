@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 400" role="img" aria-label="BioTwin H-MTF pipeline">
+  <rect width="740" height="400" fill="#f3f7f2"/>
+  <text x="24" y="28" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#1e1e1e">BioTwin H-MTF</text>
+  <text x="24" y="46" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#555">Pig farm multimodal early warning / 5-min shared timeline</text>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#fff">
+    <rect x="24" y="72" width="140" height="54" rx="6" fill="#3d7a4a"/><text x="94" y="94" font-size="11">Environment</text><text x="94" y="110" font-size="8" fill="#e8f6ea">CO2 / NH3 / climate</text>
+    <rect x="180" y="72" width="140" height="54" rx="6" fill="#3d7a4a"/><text x="250" y="94" font-size="11">Biometrics</text><text x="250" y="110" font-size="8" fill="#e8f6ea">respiration / temp</text>
+    <rect x="336" y="72" width="140" height="54" rx="6" fill="#3d7a4a"/><text x="406" y="94" font-size="11">Husbandry</text><text x="406" y="110" font-size="8" fill="#e8f6ea">feed / weight / history</text>
+  </g>
+  <line x1="94" y1="126" x2="94" y2="148" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="250" y1="126" x2="250" y2="148" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="406" y1="126" x2="406" y2="148" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="94" y1="148" x2="406" y2="148" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="250" y1="148" x2="250" y2="164" stroke="#6a8a70" stroke-width="1.4"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#fff">
+    <rect x="130" y="164" width="240" height="44" rx="6" fill="#2f5d3a"/><text x="250" y="191" font-size="11">sync / missing mask / 3-step outliers</text>
+    <rect x="24" y="232" width="200" height="52" rx="6" fill="#c45c26"/><text x="124" y="254" font-size="11" font-weight="700">Individual Encoder</text><text x="124" y="270" font-size="8" fill="#fff6ee">baseline z-score</text>
+    <rect x="248" y="232" width="200" height="52" rx="6" fill="#c45c26"/><text x="348" y="254" font-size="11" font-weight="700">Herd Attention</text><text x="348" y="270" font-size="8" fill="#fff6ee">env vs individual</text>
+    <rect x="472" y="232" width="244" height="52" rx="6" fill="#2a5f8a"/><text x="594" y="254" font-size="11">Temporal Patch Transformer</text><text x="594" y="270" font-size="8" fill="#e8f3ff">cross-modal fusion</text>
+  </g>
+  <line x1="250" y1="208" x2="250" y2="232" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="124" y1="284" x2="124" y2="304" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="348" y1="284" x2="348" y2="304" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="594" y1="284" x2="594" y2="304" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="124" y1="304" x2="594" y2="304" stroke="#6a8a70" stroke-width="1.4"/>
+  <line x1="359" y1="304" x2="359" y2="320" stroke="#6a8a70" stroke-width="1.4"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#fff">
+    <rect x="40" y="320" width="200" height="52" rx="6" fill="#1e1e1e"/><text x="140" y="342" font-size="11">env / biometric forecast</text><text x="140" y="358" font-size="8" fill="#ddd">1h / 3h / 6h</text>
+    <rect x="260" y="320" width="200" height="52" rx="6" fill="#1e1e1e"/><text x="360" y="342" font-size="11">P(risk within horizon)</text><text x="360" y="358" font-size="8" fill="#ddd">LSTM-AE ensemble</text>
+    <rect x="480" y="320" width="220" height="52" rx="6" fill="#8a3d14"/><text x="590" y="342" font-size="11">explainable warning</text><text x="590" y="358" font-size="8" fill="#fff6ee">Attention / IG / LightGBM</text>
+  </g>
+</svg>

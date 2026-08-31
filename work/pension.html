@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pension Intelligence Agent</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f4efe6;
+      color: #1e2230;
+      font-family: Karla, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+    }
+    main { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    a { color: #3a4a8c; }
+    h1 { font-size: 1.7rem; line-height: 1.2; text-wrap: balance; }
+    p { max-width: 65ch; text-wrap: pretty; }
+    img { width: 100%; border: 2px solid #1e2230; border-radius: 14px; background: #fff; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 1rem 0 1.5rem; }
+    .meta span {
+      border: 1.5px solid #1e2230;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../">← Desk</a></p>
+    <h1>Pension Intelligence Agent</h1>
+    <p>A pension Q&A API that handles source documents, timing rules, and product-fit conditions separately. If retrieval, calculation, rules, or verification are missing, the answer is withheld. The LLM only polishes the wording.</p>
+    <div class="meta">
+      <span>FastAPI</span>
+      <span>RAG</span>
+      <span>PostgreSQL</span>
+    </div>
+    <img src="../pins/pension-ai.svg" alt="Pension Intelligence Agent architecture">
+    <p>The main contract is <code>POST /v1/answers</code>. Responses include answer, citations, confidence, warnings, products, and verification.</p>
+  </main>
+</body>
+</html>
