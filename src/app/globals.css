@@ -477,6 +477,11 @@ html[data-theme="night"] .pin-board::before {
   background: var(--paper);
 }
 
+.pin-shot-page {
+  aspect-ratio: 3 / 4;
+  object-position: top center;
+}
+
 .pin-body {
   display: block;
   padding: 14px 16px 16px;

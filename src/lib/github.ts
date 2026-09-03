@@ -15,6 +15,7 @@ export type GhRepo = {
   stars: number;
   image: string;
   badge?: string;
+  pageShot?: boolean;
 };
 
 const CACHE_KEY = "seong-gh-repos-v1";

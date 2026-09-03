@@ -3,6 +3,13 @@ export type Award = {
   meta?: string;
 };
 
+export type ContactHat = {
+  role: string;
+  place: string;
+  note: string;
+  href?: string;
+};
+
 export type OverlayId =
   | "projects"
   | "resume"
@@ -44,6 +51,7 @@ export const site = {
       role: "Pet Healthcare Developer",
       place: "Pet Healthcare AI",
       note: "AI Healthcare",
+      href: "https://petcloudai.com",
     },
     {
       role: "Software Engineer",
@@ -54,10 +62,31 @@ export const site = {
       role: "Lead Developer",
       place: "SOYANG Development Studio",
       note: "Software outsourcing",
+      href: "https://soyanggame.com",
     },
-  ],
+  ] satisfies ContactHat[],
   githubHide: ["wgowgo.github.io", "blindcollective", "seong-portfolio"],
   boardPins: [
+    {
+      name: "soyang-game",
+      label: "SOYANG Game",
+      description: "Korean folktales rebuilt as playable systems.",
+      href: "https://soyanggame.com",
+      language: "Studio",
+      stars: 0,
+      image: local("/pins/soyang-game.png"),
+      pageShot: true,
+    },
+    {
+      name: "pet-cloud-ai",
+      label: "Pet Cloud AI",
+      description: "Pet healthcare AI.",
+      href: "https://petcloudai.com",
+      language: "Healthcare",
+      stars: 0,
+      image: local("/pins/pet-cloud.png"),
+      pageShot: true,
+    },
     {
       name: "the-lost-story",
       label: "TheLostStory",

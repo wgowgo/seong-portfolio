@@ -80,7 +80,7 @@ export function ProjectBoard() {
           >
             <span className="pin-head" aria-hidden="true" />
             <img
-              className="pin-shot"
+              className={repo.pageShot ? "pin-shot pin-shot-page" : "pin-shot"}
               src={repo.image}
               alt=""
               loading="lazy"
